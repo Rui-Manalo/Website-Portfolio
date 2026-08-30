@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Rivera — Data Analyst Portfolio</title>
+<meta name="description" content="Data analyst portfolio — dashboards, statistical analysis, and data storytelling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__mark">AR<span class="nav__mark-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Data Analyst — Analytics &amp; BI</p>
+      <h1 class="hero__title">Turning raw data<br>into decisions worth<br><span class="hero__title-accent">making.</span></h1>
+      <p class="hero__sub">I'm Alex Rivera. I clean messy datasets, build dashboards people actually use, and find the signal buried in the noise — for teams in retail, ops, and product analytics.</p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">View projects</a>
+        <a href="assets/resume.pdf" class="btn btn--ghost" download>Download résumé</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num" data-count="37">0</span>
+          <span class="stat__label">Dashboards shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="12">0</span>
+          <span class="stat__label">Datasets a month</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="4" data-decimal="1">0</span>
+          <span class="stat__label">Years in analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__panel" aria-hidden="true">
+      <div class="panel">
+        <div class="panel__head">
+          <span class="panel__title">revenue_by_week.sql</span>
+          <span class="panel__dot"></span>
+          <span class="panel__dot"></span>
+          <span class="panel__dot"></span>
+        </div>
+        <div class="panel__body">
+          <svg class="chart" viewBox="0 0 340 140" preserveAspectRatio="none">
+            <line x1="0" y1="35" x2="340" y2="35" class="grid-line"/>
+            <line x1="0" y1="70" x2="340" y2="70" class="grid-line"/>
+            <line x1="0" y1="105" x2="340" y2="105" class="grid-line"/>
+            <path class="chart__area" d="M0,110 L34,95 L68,100 L102,70 L136,78 L170,50 L204,60 L238,30 L272,42 L306,18 L340,26 L340,140 L0,140 Z"/>
+            <path id="linePath" class="chart__line" d="M0,110 L34,95 L68,100 L102,70 L136,78 L170,50 L204,60 L238,30 L272,42 L306,18 L340,26"/>
+          </svg>
+          <div class="panel__kpis">
+            <div class="kpi">
+              <span class="kpi__label">MRR</span>
+              <span class="kpi__value">$84.2k</span>
+              <span class="kpi__delta kpi__delta--up">▲ 12.4%</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi__label">Churn</span>
+              <span class="kpi__value">2.1%</span>
+              <span class="kpi__delta kpi__delta--down">▼ 0.4%</span>
+            </div>
+          </div>
+          <div class="panel__bars">
+            <div class="bar" style="--h:40%"></div>
+            <div class="bar" style="--h:65%"></div>
+            <div class="bar" style="--h:50%"></div>
+            <div class="bar" style="--h:82%"></div>
+            <div class="bar" style="--h:58%"></div>
+            <div class="bar" style="--h:95%"></div>
+            <div class="bar" style="--h:70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOGOS / TOOLING STRIP ================= -->
+<section class="strip">
+  <div class="strip__inner">
+    <span>SQL</span><span>Python</span><span>Tableau</span><span>Power BI</span><span>Excel</span><span>dbt</span><span>Looker</span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__image">
+      <div class="photo-frame">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop&auto=format" alt="Portrait placeholder — replace with your own photo" loading="lazy">
+      </div>
+    </div>
+    <div class="about__copy">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">I like data that argues with you.</h2>
+      <p>Most of my work starts with a question a stakeholder can't quite answer on their own — "why did retention drop in March," "which channel actually pays for itself." I trace it back through the data, build the model or dashboard that answers it, and make sure the answer survives someone poking at it.</p>
+      <p>Before analytics I worked in operations, which is probably why I care more about whether a number is <em>right</em> than whether the chart is pretty. (Though I still try for both.)</p>
+      <div class="about__facts">
+        <div class="fact"><span class="fact__k">Based in</span><span class="fact__v">Manila, PH</span></div>
+        <div class="fact"><span class="fact__k">Focus</span><span class="fact__v">Product &amp; Revenue Analytics</span></div>
+        <div class="fact"><span class="fact__k">Currently</span><span class="fact__v">Open to new roles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="work" id="work">
+  <div class="work__inner">
+    <p class="eyebrow">Selected work</p>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A few analyses and dashboards I'd actually show in an interview. Replace these with your own — swap the SVG thumbnail, title, and links.</p>
+
+    <div class="projects">
+
+      <article class="project">
+        <div class="project__thumb" data-thumb="line">
+          <svg viewBox="0 0 400 220" class="thumb-svg">
+            <rect width="400" height="220" fill="var(--ink)"/>
+            <g stroke="var(--paper)" stroke-opacity="0.08">
+              <line x1="0" y1="55" x2="400" y2="55"/><line x1="0" y1="110" x2="400" y2="110"/><line x1="0" y1="165" x2="400" y2="165"/>
+            </g>
+            <path d="M0,150 L57,130 L114,145 L171,95 L228,110 L285,60 L342,80 L400,40" fill="none" stroke="var(--teal-bright)" stroke-width="3"/>
+            <path d="M0,150 L57,130 L114,145 L171,95 L228,110 L285,60 L342,80 L400,40 L400,220 L0,220 Z" fill="var(--teal-bright)" opacity="0.15"/>
+            <circle cx="342" cy="80" r="5" fill="var(--amber)"/>
+          </svg>
+        </div>
+        <div class="project__body">
+          <span class="project__tag">Cohort Analysis</span>
+          <h3>Subscriber Churn Model</h3>
+          <p>Built a cohort-based churn model in Python (pandas + lifelines) that flagged at-risk accounts 3 weeks earlier than the existing rule-based system, cutting monthly churn by 9%.</p>
+          <ul class="project__stack">
+            <li>Python</li><li>pandas</li><li>scikit-learn</li><li>Looker</li>
+          </ul>
+          <div class="project__links">
+            <a href="#" class="link">Case study →</a>
+            <a href="#" class="link link--muted">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__thumb" data-thumb="bar">
+          <svg viewBox="0 0 400 220" class="thumb-svg">
+            <rect width="400" height="220" fill="var(--ink)"/>
+            <g fill="var(--amber)">
+              <rect x="30" y="120" width="34" height="70"/>
+              <rect x="90" y="90" width="34" height="100"/>
+              <rect x="150" y="60" width="34" height="130"/>
+              <rect x="210" y="100" width="34" height="90"/>
+              <rect x="270" y="40" width="34" height="150"/>
+              <rect x="330" y="75" width="34" height="115"/>
+            </g>
+            <g stroke="var(--paper)" stroke-opacity="0.15">
+              <line x1="0" y1="190" x2="400" y2="190"/>
+            </g>
+          </svg>
+        </div>
+        <div class="project__body">
+          <span class="project__tag">Marketing Analytics</span>
+          <h3>Multi-Channel Attribution Dashboard</h3>
+          <p>Designed a Tableau dashboard unifying spend and conversion data across 6 ad channels, replacing a week of manual spreadsheet reconciliation with a same-day refresh.</p>
+          <ul class="project__stack">
+            <li>SQL</li><li>Tableau</li><li>dbt</li><li>BigQuery</li>
+          </ul>
+          <div class="project__links">
+            <a href="#" class="link">Case study →</a>
+            <a href="#" class="link link--muted">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__thumb" data-thumb="scatter">
+          <svg viewBox="0 0 400 220" class="thumb-svg">
+            <rect width="400" height="220" fill="var(--ink)"/>
+            <g fill="var(--teal-bright)" opacity="0.85">
+              <circle cx="60" cy="150" r="6"/><circle cx="90" cy="120" r="9"/><circle cx="130" cy="170" r="5"/>
+              <circle cx="170" cy="90" r="11"/><circle cx="210" cy="130" r="7"/><circle cx="250" cy="60" r="13"/>
+              <circle cx="290" cy="100" r="6"/><circle cx="320" cy="50" r="9"/><circle cx="350" cy="140" r="5"/>
+            </g>
+            <line x1="20" y1="185" x2="380" y2="45" stroke="var(--amber)" stroke-width="2" stroke-dasharray="6 6"/>
+          </svg>
+        </div>
+        <div class="project__body">
+          <span class="project__tag">Forecasting</span>
+          <h3>Demand Forecasting for Retail SKUs</h3>
+          <p>Built a weekly demand forecast (Prophet + XGBoost ensemble) across 1,200 SKUs, reducing stockouts by 18% and overstock carrying cost by roughly $210k annually.</p>
+          <ul class="project__stack">
+            <li>Python</li><li>Prophet</li><li>XGBoost</li><li>Power BI</li>
+          </ul>
+          <div class="project__links">
+            <a href="#" class="link">Case study →</a>
+            <a href="#" class="link link--muted">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__thumb" data-thumb="donut">
+          <svg viewBox="0 0 400 220" class="thumb-svg">
+            <rect width="400" height="220" fill="var(--ink)"/>
+            <g transform="translate(130,110)">
+              <circle r="70" fill="none" stroke="var(--paper)" stroke-opacity="0.08" stroke-width="22"/>
+              <circle r="70" fill="none" stroke="var(--teal-bright)" stroke-width="22" stroke-dasharray="220 440" transform="rotate(-90)"/>
+              <circle r="70" fill="none" stroke="var(--amber)" stroke-width="22" stroke-dasharray="90 440" stroke-dashoffset="-220" transform="rotate(-90)"/>
+            </g>
+            <g font-family="IBM Plex Mono, monospace" fill="var(--paper)" font-size="13" opacity="0.85">
+              <rect x="260" y="70" width="10" height="10" fill="var(--teal-bright)"/><text x="278" y="80">Organic — 50%</text>
+              <rect x="260" y="95" width="10" height="10" fill="var(--amber)"/><text x="278" y="105">Paid — 20%</text>
+              <rect x="260" y="120" width="10" height="10" fill="var(--paper)" opacity="0.3"/><text x="278" y="130">Other — 30%</text>
+            </g>
+          </svg>
+        </div>
+        <div class="project__body">
+          <span class="project__tag">Survey Research</span>
+          <h3>Customer Segmentation Study</h3>
+          <p>Ran a k-means segmentation on 40k survey + behavioral records, uncovering a high-value "power user" segment that reshaped the product team's Q3 roadmap.</p>
+          <ul class="project__stack">
+            <li>R</li><li>k-means</li><li>ggplot2</li><li>Excel</li>
+          </ul>
+          <div class="project__links">
+            <a href="#" class="link">Case study →</a>
+            <a href="#" class="link link--muted">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+  <div class="skills__inner">
+    <p class="eyebrow eyebrow--light">Toolkit</p>
+    <h2 class="section-title section-title--light">Skills</h2>
+
+    <div class="skills__grid">
+      <div class="skill-group">
+        <h3>Languages &amp; Querying</h3>
+        <div class="meter"><span>SQL</span><div class="meter__track"><div class="meter__fill" style="--w:95%"></div></div></div>
+        <div class="meter"><span>Python</span><div class="meter__track"><div class="meter__fill" style="--w:88%"></div></div></div>
+        <div class="meter"><span>R</span><div class="meter__track"><div class="meter__fill" style="--w:65%"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <h3>Visualization &amp; BI</h3>
+        <div class="meter"><span>Tableau</span><div class="meter__track"><div class="meter__fill" style="--w:90%"></div></div></div>
+        <div class="meter"><span>Power BI</span><div class="meter__track"><div class="meter__fill" style="--w:80%"></div></div></div>
+        <div class="meter"><span>Looker Studio</span><div class="meter__track"><div class="meter__fill" style="--w:72%"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <h3>Data &amp; Statistics</h3>
+        <div class="meter"><span>Statistical modeling</span><div class="meter__track"><div class="meter__fill" style="--w:85%"></div></div></div>
+        <div class="meter"><span>A/B testing</span><div class="meter__track"><div class="meter__fill" style="--w:82%"></div></div></div>
+        <div class="meter"><span>dbt / warehousing</span><div class="meter__track"><div class="meter__fill" style="--w:70%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="experience" id="experience">
+  <div class="experience__inner">
+    <p class="eyebrow">Career</p>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-item__date">2023 — Present</div>
+        <div class="tl-item__body">
+          <h3>Senior Data Analyst — Northwind Retail</h3>
+          <p>Own the demand-forecasting and merchandising analytics stack. Lead a team of two analysts and partner directly with the VP of Merchandising on quarterly planning.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2021 — 2023</div>
+        <div class="tl-item__body">
+          <h3>Data Analyst — Fernbridge SaaS</h3>
+          <p>Built the company's first self-serve BI layer in Looker, cutting ad-hoc reporting requests to the data team by 60%.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2019 — 2021</div>
+        <div class="tl-item__body">
+          <h3>Operations Analyst — Corvid Logistics</h3>
+          <p>Started in ops, ended up owning every spreadsheet in the building — the gateway drug into analytics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<footer class="contact" id="contact">
+  <div class="contact__inner">
+    <p class="eyebrow eyebrow--light">Get in touch</p>
+    <h2 class="contact__title">Have a dataset worth digging into?</h2>
+    <p class="contact__sub">I'm currently open to full-time and contract analytics roles.</p>
+    <a href="mailto:alex.rivera@example.com" class="contact__email">alex.rivera@example.com</a>
+    <div class="contact__socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">Tableau Public</a>
+    </div>
+    <p class="contact__foot">© 2026 Alex Rivera. Built with HTML, CSS &amp; JS.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
