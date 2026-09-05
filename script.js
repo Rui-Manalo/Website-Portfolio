@@ -4,7 +4,7 @@ const navLinks = document.querySelector('.nav__links');
 
 navToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
@@ -35,14 +35,26 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
+    // stat counters: start numeric animation and add visible state
     if (entry.target.classList.contains('stat__num')) {
       animateCount(entry.target);
+      entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
+      return;
     }
 
+    // meter fills: animate width
     if (entry.target.classList.contains('meter__fill')) {
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
+      return;
+    }
+
+    // generic revealable elements: add class to trigger CSS animation
+    if (entry.target.classList.contains('reveal')) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+      return;
     }
   });
 }, { threshold: 0.4 });
@@ -50,12 +62,28 @@ const observer = new IntersectionObserver((entries) => {
 statNums.forEach(el => observer.observe(el));
 document.querySelectorAll('.meter__fill').forEach(el => observer.observe(el));
 
+// Programmatically mark a set of common content blocks as revealable
+const revealSelectors = [
+  '.hero__copy', '.hero__panel', '.about__inner', '.projects > article', '.work__inner', '.skills__inner', '.experience__inner', '.contact__inner'
+];
+revealSelectors.forEach(sel => {
+  document.querySelectorAll(sel).forEach(el => {
+    if (!el.classList.contains('reveal')) el.classList.add('reveal');
+    observer.observe(el);
+  });
+});
+
+// Also ensure stat numbers and panel children get a visible class when observed
+// (observer callback will add `.is-visible` when intersecting). When a stat
+// becomes visible, add a small class to animate the number popping.
+
+
 // ===== Sticky nav background intensifies on scroll =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 20) {
-    nav.style.boxShadow = '0 1px 0 rgba(15,23,32,0.06)';
+    nav.classList.add('nav--scrolled');
   } else {
-    nav.style.boxShadow = 'none';
+    nav.classList.remove('nav--scrolled');
   }
 });
