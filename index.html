@@ -111,7 +111,7 @@
   <div class="about__inner">
     <div class="about__image">
       <div class="photo-frame">
-        <img src="images/portrait.jpg" alt="Portrait=" loading="lazy">
+        <img src="images/portrait.jpg" alt="Portrait of Rui Manalo" loading="lazy">
       </div>
     </div>
     <div class="about__copy">
@@ -138,47 +138,25 @@
     <div class="projects">
 
       <article class="project">
-        <div class="project__thumb" data-thumb="line">
-          <svg viewBox="0 0 400 220" class="thumb-svg">
-            <rect width="400" height="220" fill="var(--ink)"/>
-            <g stroke="var(--paper)" stroke-opacity="0.08">
-              <line x1="0" y1="55" x2="400" y2="55"/><line x1="0" y1="110" x2="400" y2="110"/><line x1="0" y1="165" x2="400" y2="165"/>
-            </g>
-            <path d="M0,150 L57,130 L114,145 L171,95 L228,110 L285,60 L342,80 L400,40" fill="none" stroke="var(--teal-bright)" stroke-width="3"/>
-            <path d="M0,150 L57,130 L114,145 L171,95 L228,110 L285,60 L342,80 L400,40 L400,220 L0,220 Z" fill="var(--teal-bright)" opacity="0.15"/>
-            <circle cx="342" cy="80" r="5" fill="var(--amber)"/>
-          </svg>
+        <div class="project__thumb">
+          <img src="images/streamflix_oltp_olap_pipeline.jpg" alt="API-to-Warehouse Data Pipeline screenshot" loading="lazy">
         </div>
         <div class="project__body">
           <span class="project__tag">ELT Pipeline</span>
-          <h3>API-to-Warehouse Data Pipeline</h3>
-          <p>Placeholder — replace once built. Plan: pull data from a public API on a schedule, load it into BigQuery, and land it in a raw table ready for transformation.</p>
+          <h3>StreamFlix Viewing Analytics: Raw data to OLTP to OLAP Dimensional Modeling</h3>
+          <p>This project takes a flat, denormalized dataset of movie streaming viewing history and carries it through the full data engineering lifecycle: functional dependency analysis, normalization into an OLTP schema, and transformation into a star schema OLAP data warehouse. Unlike a single-schema exercise, this project maintains two separate, physically distinct databases: MovieOLTP and MovieOLAP, connected by an explicit ETL step that reads from one and writes into the other.</p>
           <ul class="project__stack">
-            <li>Python</li><li>API</li><li>BigQuery</li><li>Cron</li>
+            <li>SQL</li><li>DuckDB</li><li>Schema Design</li><li>Data Modeling</li><li>Data Warehousing</li>
           </ul>
           <div class="project__links">
-            <a href="#" class="link">Case study →</a>
-            <a href="#" class="link link--muted">GitHub</a>
+            <a href="https://github.com/Rui-Manalo/oltp-to-olap-dimensional-modeling" class="link link--muted" target="_blank" rel="noopener noreferrer">GitHub →</a>
           </div>
         </div>
       </article>
 
       <article class="project">
-        <div class="project__thumb" data-thumb="bar">
-          <svg viewBox="0 0 400 220" class="thumb-svg">
-            <rect width="400" height="220" fill="var(--ink)"/>
-            <g fill="var(--amber)">
-              <rect x="30" y="120" width="34" height="70"/>
-              <rect x="90" y="90" width="34" height="100"/>
-              <rect x="150" y="60" width="34" height="130"/>
-              <rect x="210" y="100" width="34" height="90"/>
-              <rect x="270" y="40" width="34" height="150"/>
-              <rect x="330" y="75" width="34" height="115"/>
-            </g>
-            <g stroke="var(--paper)" stroke-opacity="0.15">
-              <line x1="0" y1="190" x2="400" y2="190"/>
-            </g>
-          </svg>
+        <div class="project__thumb">
+          <img src="images/project-2-dbt.jpg" alt="dbt Models & Data Quality Tests screenshot" loading="lazy">
         </div>
         <div class="project__body">
           <span class="project__tag">Data Transformation</span>
@@ -195,16 +173,8 @@
       </article>
 
       <article class="project">
-        <div class="project__thumb" data-thumb="scatter">
-          <svg viewBox="0 0 400 220" class="thumb-svg">
-            <rect width="400" height="220" fill="var(--ink)"/>
-            <g fill="var(--teal-bright)" opacity="0.85">
-              <circle cx="60" cy="150" r="6"/><circle cx="90" cy="120" r="9"/><circle cx="130" cy="170" r="5"/>
-              <circle cx="170" cy="90" r="11"/><circle cx="210" cy="130" r="7"/><circle cx="250" cy="60" r="13"/>
-              <circle cx="290" cy="100" r="6"/><circle cx="320" cy="50" r="9"/><circle cx="350" cy="140" r="5"/>
-            </g>
-            <line x1="20" y1="185" x2="380" y2="45" stroke="var(--amber)" stroke-width="2" stroke-dasharray="6 6"/>
-          </svg>
+        <div class="project__thumb">
+          <img src="images/project-3-airflow.jpg" alt="Scheduled Pipeline with Airflow screenshot" loading="lazy">
         </div>
         <div class="project__body">
           <span class="project__tag">Orchestration</span>
@@ -221,20 +191,8 @@
       </article>
 
       <article class="project">
-        <div class="project__thumb" data-thumb="donut">
-          <svg viewBox="0 0 400 220" class="thumb-svg">
-            <rect width="400" height="220" fill="var(--ink)"/>
-            <g transform="translate(130,110)">
-              <circle r="70" fill="none" stroke="var(--paper)" stroke-opacity="0.08" stroke-width="22"/>
-              <circle r="70" fill="none" stroke="var(--teal-bright)" stroke-width="22" stroke-dasharray="220 440" transform="rotate(-90)"/>
-              <circle r="70" fill="none" stroke="var(--amber)" stroke-width="22" stroke-dasharray="90 440" stroke-dashoffset="-220" transform="rotate(-90)"/>
-            </g>
-            <g font-family="IBM Plex Mono, monospace" fill="var(--paper)" font-size="13" opacity="0.85">
-              <rect x="260" y="70" width="10" height="10" fill="var(--teal-bright)"/><text x="278" y="80">Organic — 50%</text>
-              <rect x="260" y="95" width="10" height="10" fill="var(--amber)"/><text x="278" y="105">Paid — 20%</text>
-              <rect x="260" y="120" width="10" height="10" fill="var(--paper)" opacity="0.3"/><text x="278" y="130">Other — 30%</text>
-            </g>
-          </svg>
+        <div class="project__thumb">
+          <img src="images/project-4-endtoend.jpg" alt="Full ELT Pipeline: API to dbt to Report screenshot" loading="lazy">
         </div>
         <div class="project__body">
           <span class="project__tag">End-to-End</span>

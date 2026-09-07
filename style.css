@@ -31,12 +31,10 @@ body{
   color:var(--ink);
   font-family:var(--font-body);
   line-height:1.55;
-  /* Base responsive font size */
   font-size:clamp(15px, 1.35vw, 17px);
   -webkit-font-smoothing:antialiased;
 }
 
-/* subtle page backdrop to give depth */
 body::before{
   content:""; position:fixed; inset:0; z-index:-1;
   background-image: radial-gradient(circle at 8% 12%, rgba(23,165,137,0.03), transparent 8%), radial-gradient(circle at 92% 88%, rgba(224,145,59,0.02), transparent 10%);
@@ -102,7 +100,6 @@ ul{ list-style:none; margin:0; padding:0; }
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-/* stronger scrolled state */
 .nav--scrolled{ background:rgba(245,246,244,0.95); box-shadow:0 6px 22px -18px rgba(15,23,32,0.35); }
 .nav__inner{
   max-width:var(--container); margin:0 auto;
@@ -167,7 +164,6 @@ ul{ list-style:none; margin:0; padding:0; }
 }
 .stat__label{ font-size:0.82rem; color:var(--slate); margin-top:0.2rem; }
 
-/* Hero dashboard panel (signature element) */
 .hero__panel{ position:relative; }
 .panel{
   background:var(--ink); border-radius:16px; padding:1.4rem;
@@ -223,32 +219,25 @@ ul{ list-style:none; margin:0; padding:0; }
 
 /* =========================================================
    REVEAL / ANIMATIONS
-   tasteful, subtle animations for content entrance
 ========================================================= */
 .reveal{ opacity:0; transform:translateY(12px); transition:opacity 0.7s cubic-bezier(.2,.9,.2,1), transform 0.7s cubic-bezier(.2,.9,.2,1); will-change:opacity, transform; }
 .reveal.is-visible{ opacity:1; transform:none; }
 
-/* project cards and grid items animate into view */
 .project.reveal{ opacity:0; transform:translateY(10px) scale(.995); }
 .project.reveal.is-visible{ opacity:1; transform:none; }
 
-/* nav open animation */
 @keyframes navSlideDown{ from{ opacity:0; transform:translateY(-6px) scaleY(.98); } to{ opacity:1; transform:none; } }
 .nav__links.is-open{ animation:navSlideDown 240ms cubic-bezier(.2,.9,.2,1) both; }
 
-/* subtle focus / hover transitions */
 .nav__links a{ transition:color 0.15s ease, transform 0.18s ease; }
 .nav__links a:active{ transform:translateY(1px); }
 
-/* stat numbers pop slightly when revealed */
 .stat__num{ transition:transform 0.7s cubic-bezier(.2,.9,.2,1), opacity 0.5s ease; display:inline-block; }
 .stat__num.is-visible{ transform:translateY(-4px) scale(1.03); opacity:1; }
 
-/* hero panel subtle lift when visible */
 .hero__panel.reveal{ transform:translateY(8px) rotate(-0.8deg); opacity:0; }
 .hero__panel.reveal.is-visible{ transform:none; opacity:1; }
 
-/* chart line animation already exists; ensure smooth rendering */
 .chart__line{ vector-effect:non-scaling-stroke; }
 
 /* =========================================================
@@ -302,13 +291,34 @@ ul{ list-style:none; margin:0; padding:0; }
   transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
 .project:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -24px rgba(15,23,32,0.25); }
-.project__thumb{ line-height:0; position:relative; overflow:hidden; }
-.project__thumb::after{
-  content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(23,165,137,0.06), rgba(224,145,59,0.03)); opacity:0; transition:opacity 260ms ease;
+
+.project__thumb{
+  line-height:0; position:relative; overflow:hidden;
+  aspect-ratio: 20 / 11;
+  background: var(--ink);
 }
-.thumb-svg{ width:100%; height:auto; display:block; transition:transform 420ms cubic-bezier(.2,.9,.2,1); }
+.project__thumb::before{
+  content: "Screenshot coming soon";
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:0.8rem;
+  color:rgba(245,246,244,0.4);
+  background:var(--ink);
+  z-index:0;
+}
+.project__thumb img{
+  position:relative; z-index:1;
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform 420ms cubic-bezier(.2,.9,.2,1);
+}
+.project__thumb::after{
+  content:""; position:absolute; inset:0; z-index:2;
+  background:linear-gradient(180deg, rgba(23,165,137,0.06), rgba(224,145,59,0.03)); opacity:0; transition:opacity 260ms ease;
+  pointer-events:none;
+}
 .project:hover .project__thumb::after{ opacity:1; }
-.project:hover .thumb-svg{ transform:scale(1.03); }
+.project:hover .project__thumb img{ transform:scale(1.03); }
+
 .project__body{ padding:1.5rem; }
 .project__tag{
   font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase;
