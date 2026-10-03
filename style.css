@@ -1518,3 +1518,7 @@ ul {
     text-align: left;
   }
 }
+
+/* show full images, no cropping */
+.shot:has(img){ aspect-ratio:auto; }
+.shot img{ height:auto; object-fit:contain; display:block; }
