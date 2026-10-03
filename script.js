@@ -57,7 +57,7 @@ const observer = new IntersectionObserver((entries) => {
       return;
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.15 });
 
 statNums.forEach(el => observer.observe(el));
 document.querySelectorAll('.meter__fill').forEach(el => observer.observe(el));
@@ -87,3 +87,21 @@ window.addEventListener('scroll', () => {
     nav.classList.remove('nav--scrolled');
   }
 });
+
+// ===== Case study pages: reading progress + active contents link =====
+const progress = document.getElementById('progress');
+if (progress) {
+  const setProgress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(scrollY / max, 1) : 0})`;
+  };
+  addEventListener('scroll', setProgress, { passive: true });
+  setProgress();
+}
+const tocLinks = document.querySelectorAll('.toc a');
+if (tocLinks.length) {
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) tocLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-20% 0px -70% 0px' });
+  tocLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+}

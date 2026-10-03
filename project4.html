@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full ELT Pipeline: API → dbt → Report | Rui Manalo</title>
+<meta name="description" content="Both pipeline projects combined into one end-to-end flow, ending in a clean output table or chart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html#top" class="nav__mark">RM<span class="nav__mark-dot">.</span></a>
+    <nav class="nav__links">
+      <a href="index.html#work" aria-current="page">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#contact" class="nav__cta">Contact</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ========== TITLE BLOCK ========== -->
+<section class="phero">
+  <div class="pg-wrap">
+    <a href="index.html#work" class="back">← All projects</a><br>
+    <span class="project__tag">End-to-End</span>
+    <h1 class="pg-title">Full ELT Pipeline: API → dbt → Report</h1>
+    <p class="pg-lead">Both pipeline projects combined into one end-to-end flow, ending in a clean output table or chart.</p>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Solo: design, build, docs</dd></div>
+      <div><dt>Timeline</dt><dd>[Month Year] – [Month Year]</dd></div>
+      <div><dt>Status</dt><dd>Planned</dd></div>
+      <div><dt>Source</dt><dd><a class="link" href="#" target="_blank" rel="noopener noreferrer">GitHub →</a></dd></div>
+    </dl>
+    <ul class="project__stack" style="margin:1.6rem 0 0"><li>Python</li><li>dbt</li><li>Airflow</li><li>BigQuery</li></ul>
+  </div>
+</section>
+
+<div class="pg-wrap">
+  <figure class="fig" style="margin-top:0">
+    <div class="shot" data-ph="Cover image · 1600 × 900"><img src="images/project-4-endtoend.jpg" alt="Full ELT Pipeline: API → dbt → Report cover" onerror="this.remove()"></div>
+  </figure>
+</div>
+
+<!-- ========== BODY ========== -->
+<div class="pg-wrap pg-layout">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#overview">Overview</a>
+    <a href="#problem">Problem &amp; goals</a>
+    <a href="#approach">Approach</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#code">Code sample</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#learned">What I learned</a>
+  </aside>
+
+  <article class="prose">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p class="lead">Placeholder: one strong sentence on what this project proves.</p>
+      <p>Placeholder: combine both pipeline projects into one flow, capped with a lightweight output table or chart to prove the data lands clean.</p>
+    </section>
+
+    <section id="problem">
+      <h2>Problem &amp; goals</h2>
+      <p>Describe the starting point: what the raw data looked like and why it needed work. Then list what "done" meant.</p>
+      <ul class="checks">
+        <li><strong>Goal one.</strong> Replace with a measurable outcome.</li>
+        <li><strong>Goal two.</strong> Replace with a constraint you worked within.</li>
+        <li><strong>Goal three.</strong> Replace with what you wanted to prove.</li>
+      </ul>
+    </section>
+
+    <section id="approach">
+      <h2>Approach</h2>
+      <ol class="steps">
+        <li><h3>Step one: Ingest</h3><p>How the data got in, and what you checked on arrival.</p></li>
+        <li><h3>Step two: Model</h3><p>The schema or layers you designed, and why.</p></li>
+        <li><h3>Step three: Test</h3><p>The checks that make the output trustworthy.</p></li>
+      </ol>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <p>One paragraph walking through the diagram below.</p>
+      <figure class="fig">
+        <div class="shot" data-ph="Diagram · 1600 × 900"><img src="images/elt-diagram.jpg" alt="Full ELT Pipeline: API → dbt → Report architecture diagram" onerror="this.remove()"></div>
+        <figcaption>Fig. 1: Replace with a caption that explains the diagram.</figcaption>
+      </figure>
+      <blockquote class="callout">A key design decision, in one sentence, worth pulling out.</blockquote>
+    </section>
+
+    <section id="code">
+      <h2>Code sample</h2>
+      <p>A short snippet that shows how you think. Explain what it does in a sentence.</p>
+      <div class="code">
+        <div class="panel__head"><span class="panel__title">models/marts/fct_example.sql</span><span class="panel__dot"></span><span class="panel__dot"></span><span class="panel__dot"></span></div>
+<pre><span class="c">-- Replace with a real model from this project</span>
+<span class="k">select</span>
+    order_id,
+    customer_id,
+    <span class="k">sum</span>(amount) <span class="k">as</span> total_amount
+<span class="k">from</span> {{ ref(<span class="s">'stg_orders'</span>) }}
+<span class="k">group by</span> 1, 2</pre>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <figure class="fig"><div class="shot" data-ph="Screenshot · 4 : 3" style="aspect-ratio:4/3"><img src="images/elt-1.jpg" alt="" onerror="this.remove()"></div><figcaption>Caption one</figcaption></figure>
+        <figure class="fig"><div class="shot" data-ph="Screenshot · 4 : 3" style="aspect-ratio:4/3"><img src="images/elt-2.jpg" alt="" onerror="this.remove()"></div><figcaption>Caption two</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="learned">
+      <h2>What I learned</h2>
+      <p>Be honest about what was hard, what you would change, and what you will build next.</p>
+    </section>
+  </article>
+</div>
+
+<!-- ========== RESULTS ========== -->
+<section class="results" id="results">
+  <div class="results__head">
+    <p class="eyebrow eyebrow--light">Outcome</p>
+    <h2 class="section-title section-title--light">Results</h2>
+  </div>
+  <div class="results__grid">
+    <div class="rk"><b>[00]</b><span>Metric label</span></div>
+    <div class="rk"><b>[00%]</b><span>Metric label</span></div>
+    <div class="rk"><b>[0]</b><span>Metric label</span></div>
+    <div class="rk"><b>[0s]</b><span>Metric label</span></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="More projects">
+  <a href="project-airflow.html"><small>← Previous project</small><strong>Scheduled Pipeline with Airflow</strong></a>
+  <a href="project-streamflix.html" class="next"><small>Next project →</small><strong>StreamFlix Viewing Analytics</strong></a>
+</nav>
+
+<footer class="contact" id="contact">
+  <div class="contact__inner">
+    <p class="eyebrow eyebrow--light">Get in touch</p>
+    <h2 class="contact__title">Have a pipeline worth building?</h2>
+    <a href="mailto:ruicourse3@gmail.com" class="contact__email">ruicourse3@gmail.com</a>
+    <p class="contact__foot" style="margin-top:3rem">© 2026 Rui Manalo. Built with HTML, CSS &amp; JS.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
