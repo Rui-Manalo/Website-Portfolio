@@ -9,6 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Thumbnails with a real image: show the whole image, no crop, no placeholder text */
+.project__thumb--fit::before,.project__thumb--fit::after{display:none !important;content:none !important}
+.project__thumb--fit img{width:100%;height:100%;object-fit:contain;display:block}
+</style>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230F1720'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23F5F6F4'>RM</text></svg>">
 </head>
 <body>
@@ -140,8 +145,8 @@
 
       <article class="project">
         <a class="project__stretch" href="project1.html" aria-label="Read case study: StreamFlix Viewing Analytics"></a>
-        <div class="project__thumb">
-          <img src="images/streamflix_oltp_olap_pipeline.jpg" alt="API-to-Warehouse Data Pipeline screenshot" loading="lazy">
+        <div class="project__thumb project__thumb--fit" style="background:#121316">
+          <img src="images/streamflix_oltp_olap_pipeline.jpg" alt="StreamFlix OLTP to OLAP pipeline diagram" loading="lazy">
         </div>
         <div class="project__body">
           <span class="project__tag">ELT Pipeline</span>
@@ -158,20 +163,20 @@
       </article>
 
       <article class="project">
-        <a class="project__stretch" href="project2.html" aria-label="Read case study: dbt Models & Data Quality Tests"></a>
-        <div class="project__thumb">
-          <img src="images/project-2-dbt.jpg" alt="dbt Models & Data Quality Tests screenshot" loading="lazy">
+        <a class="project__stretch" href="project2.html" aria-label="Read case study: TheLook E-Commerce: Star Schema & Sales Dashboard"></a>
+        <div class="project__thumb project__thumb--fit" style="background:#17202a">
+          <img src="images/project2/workflow.svg" alt="TheLook E-Commerce workflow diagram" loading="lazy">
         </div>
         <div class="project__body">
-          <span class="project__tag">Data Transformation</span>
-          <h3>dbt Models &amp; Data Quality Tests</h3>
-          <p>Placeholder — replace once built. Plan: rebuild a raw dataset as a dbt project with staging → mart layers, plus tests for nulls, uniqueness, and referential integrity.</p>
+          <span class="project__tag">Dimensional Modeling</span>
+          <h3>TheLook E-Commerce: Star Schema & Sales Dashboard</h3>
+          <p> Google's public e-commerce dataset modeled into a BigQuery star schema, with a Power BI sales dashboard on top.</p>
           <ul class="project__stack">
             <li>SQL</li><li>dbt</li><li>BigQuery</li><li>Git</li>
           </ul>
           <div class="project__links">
             <a href="project2.html" class="link">Case study →</a>
-            <a href="#" class="link link--muted">GitHub</a>
+            <a href="https://github.com/Rui-Manalo/TheLook-E-Commerce-Star-Schema-Sales-Dashboard" class="link link--muted" target="_blank" rel="noopener noreferrer">GitHub →</a>
           </div>
         </div>
       </article>
